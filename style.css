@@ -1,27 +1,63 @@
 * {
     box-sizing: border-box;
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
 }
+
 body {
     background-image: url(./img/wall.png);
 }
+
 section {
     background-image: url(./img/cork.png);
 }
+
 .container {
-    max-width: 900px;
-    margin:0 auto;
+    max-width: 1200px;
+    margin: 0 auto;
 }
+
 .row {
     display: flex;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
 }
+
 .col {
     width: 33.33%;
 }
+
+.card {
+    margin: 15px;
+    padding: 15px;
+    background-color: white;
+    position: relative;
+}
+
+.card .pin {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.card figure {
+    width: 100%;
+
+}
+
+.card h1 {
+    padding: 10px 0;
+}
+
 .testImg {
-    
-    width: 300px;
+    display: block;
     aspect-ratio: 1/1;
+    width: 100%;
+
+
+}
+
+body>h1 {
+    text-align: center;
+    margin: 20px 0;
 }
