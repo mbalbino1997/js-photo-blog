@@ -11,7 +11,7 @@
 */
 const appendCard = document.getElementById("appendCard");
 let posts;
-axios.get("https://jsonplaceholder.typicode.com/photos?_limit=6")
+axios.get("https://jsonplaceholder.typicode.com/photos?_limit=12")
     .then(res => {
         res.data.forEach(post => {
             const { url, title } = post;
