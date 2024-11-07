@@ -38,6 +38,7 @@ axios.get("https://jsonplaceholder.typicode.com/photos?_limit=6")
             card.addEventListener("click",() => {
                 img.src=res.data[i].url;
                 overlay.classList.remove("none");
+                img.classList.remove("none");
                 body.classList.add("overflow-hidden");
             });
         } )
@@ -48,5 +49,10 @@ axios.get("https://jsonplaceholder.typicode.com/photos?_limit=6")
 
     btnClose.addEventListener("click",() => {
         overlay.classList.add("none");
+        img.classList.add("none");
         body.classList.remove("overflow-hidden");
+    })
+    overlay.addEventListener("click", () => {
+        overlay.classList.add("none");
+        img.classList.add("none");
     })
