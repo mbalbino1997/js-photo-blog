@@ -95,7 +95,7 @@ body>h1 {
 }
 
 #img {
-    position: absolute;
+    position: fixed;
     top:20%;
     left:50%;
     transform: translateX(-50%);
@@ -105,7 +105,7 @@ body>h1 {
     font-size: 30px;
     padding:10px;
     border-radius: 10px;
-    position: absolute;
+    position: fixed;
     top:40px;
     left:50%;
     transform: translateX(-50%);

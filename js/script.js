@@ -55,4 +55,5 @@ axios.get("https://jsonplaceholder.typicode.com/photos?_limit=6")
     overlay.addEventListener("click", () => {
         overlay.classList.add("none");
         img.classList.add("none");
+        body.classList.remove("overflow-hidden");
     })
