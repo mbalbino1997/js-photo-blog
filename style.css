@@ -23,6 +23,7 @@ section {
 .container {
     max-width: 1200px;
     margin: 0 auto;
+    perspective: 1000px;
 }
 
 .row {
@@ -44,6 +45,8 @@ section {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
+    transition: transform 0.3s ease;
+    transform-style: preserve-3d;
 }
 
 .card .pin {
@@ -51,6 +54,9 @@ section {
     top: -12px;
     left: 50%;
     transform: translateX(-50%);
+}
+.card:hover {
+    transform: rotateY(20deg) rotateX(10deg);
 }
 
 .card figure {
