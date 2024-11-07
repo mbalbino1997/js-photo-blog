@@ -29,18 +29,18 @@ axios.get("https://jsonplaceholder.typicode.com/photos?_limit=6")
                     </div>
                 </div>`;
 
-                const card = document.getElementById("card");
-                const img = document.getElementById("img");
-                card.addEventListener("click",() => {
-                    img.src=`"${url}"`;
-                    overlay.classList.remove("none");
-                    body.classList.add("overflow-hidden");
-                })
-
-
-
-
         });
+
+        const cards = document.querySelectorAll(".card");
+        const img = document.getElementById("img");
+        cards.forEach((card,i) => {
+
+            card.addEventListener("click",() => {
+                img.src=res.data[i].url;
+                overlay.classList.remove("none");
+                body.classList.add("overflow-hidden");
+            });
+        } )
     })
     .catch(err => {
         console.error(err);
