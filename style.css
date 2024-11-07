@@ -10,6 +10,7 @@ body {
     background-image: url(./img/wall.png);
     font-family: "Comic Neue", cursive;
     font-weight: 700;
+    overflow: hidden;
 }
 
 section {
@@ -83,4 +84,18 @@ body>h1 {
     right:0;
     width: 100vw;
     height: 100vh;
+}
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.close {
+    font-size: 30px;
+    padding:10px;
+    border-radius: 10px;
+    position: absolute;
+    top:40px;
+    left:50%;
+    transform: translateX(-50%);
 }
