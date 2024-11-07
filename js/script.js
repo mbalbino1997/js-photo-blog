@@ -29,7 +29,7 @@ axios.get("https://jsonplaceholder.typicode.com/photos?_limit=6")
         //prendiamo tutte le card create
         const cards = document.querySelectorAll(".card");
 
-        setupCardClick(cards, res.data);
+        setupCardClick(cards);
 
     })
     .catch(err => {
@@ -49,13 +49,13 @@ configureCloseOnClick(overlay);
 
 function createCardsElements(data) {
     data.forEach((post) => {
-        const { url, title } = post;
+        const { thumbnailUrl, url, title } = post;
         appendCard.innerHTML +=
-            `<div class="col">
-        <div id="card" class="card">
+            `<div class="col" >
+        <div data-full-image="${url}" class="card">
         <img class="pin" src="./img/pin.svg" alt="">
         <figure>
-        <img class="testImg" src="${url}" alt="">
+        <img class="testImg" src="${thumbnailUrl}"  alt="">
         </figure>
         <p>${title}</p>
         </div>
@@ -76,10 +76,12 @@ function configureCloseOnClick(element) {
 
 //aggiunge l'eventlistener per gestire l'overlay su tutti gli elementi dell'array passato come parametro
 
-function setupCardClick(htmlElementsArray, data) {
+function setupCardClick(htmlElementsArray) {
     htmlElementsArray.forEach((card, i) => {
         card.addEventListener("click", () => {
-            img.src = data[i].url;
+            console.log(card.getAttribute('data-full-image'))
+            console.log(card.dataset.fullImage)
+            img.src = card.getAttribute('data-full-image'); //data[i].url;
             overlay.classList.remove("none");
             img.classList.remove("none");
             body.classList.add("overflow-hidden");
