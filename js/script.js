@@ -22,19 +22,19 @@ let posts;
 
 // chiamata get utilizzando axios
 axios.get("https://jsonplaceholder.typicode.com/photos?_limit=6")
-.then(res => {
-    
-    createCardsElements(res.data);
-    
-    //prendiamo tutte le card create
-    const cards = document.querySelectorAll(".card");
-    
-    setupCardClick(cards, res.data);
-    
-})
-.catch(err => {
-    console.error(err);
-})
+    .then(res => {
+
+        createCardsElements(res.data);
+
+        //prendiamo tutte le card create
+        const cards = document.querySelectorAll(".card");
+
+        setupCardClick(cards, res.data);
+
+    })
+    .catch(err => {
+        console.error(err);
+    })
 
 configureCloseOnClick(btnClose);
 configureCloseOnClick(overlay);
@@ -51,7 +51,7 @@ function createCardsElements(data) {
     data.forEach((post) => {
         const { url, title } = post;
         appendCard.innerHTML +=
-        `<div class="col">
+            `<div class="col">
         <div id="card" class="card">
         <img class="pin" src="./img/pin.svg" alt="">
         <figure>
@@ -70,7 +70,7 @@ function configureCloseOnClick(element) {
         overlay.classList.add("none");
         img.classList.add("none");
         body.classList.remove("overflow-hidden");
-        
+
     })
 }
 
