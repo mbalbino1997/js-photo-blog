@@ -24,12 +24,12 @@ let posts;
 axios.get("https://jsonplaceholder.typicode.com/photos?_limit=6")
 .then(res => {
     
-    createCardsElements(res);
+    createCardsElements(res.data);
     
     //prendiamo tutte le card create
     const cards = document.querySelectorAll(".card");
     
-    setupCardClick(cards);
+    setupCardClick(cards, res.data);
     
 })
 .catch(err => {
@@ -76,8 +76,8 @@ function configureCloseOnClick(element) {
 
 //aggiunge l'eventlistener per gestire l'overlay su tutti gli elementi dell'array passato come parametro
 
-function setupCardClick(htmlElementsArray) {
-    htmlElements.forEach((card, i) => {
+function setupCardClick(htmlElementsArray, data) {
+    htmlElementsArray.forEach((card, i) => {
         card.addEventListener("click", () => {
             img.src = res.data[i].url;
             overlay.classList.remove("none");
