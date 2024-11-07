@@ -47,8 +47,8 @@ configureCloseOnClick(overlay);
 
 //prende il risultato della chiamata get come parametro ed utilizza i dati per creare le card
 
-function createCardsElements(result) {
-    result.data.forEach((post) => {
+function createCardsElements(data) {
+    data.forEach((post) => {
         const { url, title } = post;
         appendCard.innerHTML +=
         `<div class="col">
@@ -67,7 +67,7 @@ function createCardsElements(result) {
 
 function configureCloseOnClick(element) {
     element.addEventListener("click", () => {
-        overlay.classList.add("none");configureCloseOnClick
+        overlay.classList.add("none");
         img.classList.add("none");
         body.classList.remove("overflow-hidden");
         
@@ -79,7 +79,7 @@ function configureCloseOnClick(element) {
 function setupCardClick(htmlElementsArray, data) {
     htmlElementsArray.forEach((card, i) => {
         card.addEventListener("click", () => {
-            img.src = res.data[i].url;
+            img.src = data[i].url;
             overlay.classList.remove("none");
             img.classList.remove("none");
             body.classList.add("overflow-hidden");
