@@ -25,7 +25,7 @@ axios.get("https://jsonplaceholder.typicode.com/photos?_limit=6")
                          <p>${title}</p>
                     </div>
                 </div>`
-
+            
         });
     })
     .catch(err => {
